@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Test</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="./test.js"></script>
+	<link rel="stylesheet" type="text/css" href="./home.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	
+	<body ng-app="app" ng-controller="TileCtrl as app">
+		<div ng-repeat-start="tile in app.tiles" class="tile">
+			<h2>{{ tile.title }}</h1>
+			<ul style="list-style-type:none">
+				<li ng-repeat="link in tile.links">
+				<a>{{link.name}}</a>
+				</li>
+			</ul>
+			<div class="corner"></div>
+			<span class="fa-stack fa-3x">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="{{tile.icon}}"></i>
+			</span>
+		</div>
+		<div ng-repeat-end=""></div>
+	</body>
+</html>
